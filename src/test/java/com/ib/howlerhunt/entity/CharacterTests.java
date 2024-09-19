@@ -43,7 +43,7 @@ class CharacterTests {
 
     @Test
     void testCharacterHeight() {
-        darrow.setHeight(220);
+        darrow.setHeight(218);
         assertEquals(220, darrow.getHeight());
     }
 
