@@ -2,18 +2,18 @@ package com.ib.howlerhunt.untility;
 
 public class AttributeComp {
 
-    String name;
+    String attribute;
     Object value;
     boolean match;
 
     public AttributeComp(String name, Object value, boolean match) {
-        this.name = name;
+        this.attribute = name;
         this.value = value;
         this.match = match;
     }
 
-    public String getName() {
-        return this.name;
+    public String getAttribute() {
+        return this.attribute;
     }
 
     public Object getValue() {
@@ -24,8 +24,8 @@ public class AttributeComp {
         return this.match;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAttribute(String attribute) {
+        this.attribute = attribute;
     }
 
     public void setValue(Object value) {
