@@ -1,7 +1,7 @@
 package com.ib.howlerhunt.entity;
 
 
-import com.ib.howlerhunt.untility.AttributeComp;
+import com.ib.howlerhunt.utility.AttributeComp;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,13 +20,13 @@ public class Character {
     private String demonym;
     private String allegiance;
     private int age;
-    private float height;
+    private double height;
 
     // Default constructor
     public Character() {
     }
 
-    public Character(Long id, String name, String gender, String colour, String demonym, int age, float height) {
+    public Character(Long id, String name, String gender, String colour, String demonym, String allegiance, int age, double height) {
         this.id = id;
         this.name = name;
         this.gender = gender;
@@ -66,7 +66,7 @@ public class Character {
         return this.age;
     }
 
-    public float getHeight() {
+    public double getHeight() {
         return this.height;
     }
 
@@ -99,20 +99,20 @@ public class Character {
         this.age = age;
     }
 
-    public void setHeight(float height) {
+    public void setHeight(double height) {
         this.height = height;
     }
 
     public List<AttributeComp> attributeMatches(Character guess) {
         List<AttributeComp> matches = new ArrayList<AttributeComp>();
 
-        matches.add(new AttributeComp("Name", this.name, this.name.equals(guess.getName())));
-        matches.add(new AttributeComp("Gender", this.gender, this.gender.equals(guess.getGender())));
-        matches.add(new AttributeComp("Colour", this.colour, this.colour.equals(guess.getColour())));
-        matches.add(new AttributeComp("Demonym", this.demonym, this.demonym.equals(guess.getDemonym())));
-        matches.add(new AttributeComp("Allegiance", this.allegiance, this.allegiance.equals(guess.getAllegiance())));
-        matches.add(new AttributeComp("Age", this.age, this.age == guess.getAge()));
-        matches.add(new AttributeComp("height", this.height, this.height == guess.getHeight()));
+        matches.add(new AttributeComp("Name", guess.name, this.name.equals(guess.getName())));
+        matches.add(new AttributeComp("Gender", guess.gender, this.gender.equals(guess.getGender())));
+        matches.add(new AttributeComp("Colour", guess.colour, this.colour.equals(guess.getColour())));
+        matches.add(new AttributeComp("Demonym", guess.demonym, this.demonym.equals(guess.getDemonym())));
+        matches.add(new AttributeComp("Allegiance", guess.allegiance, this.allegiance.equals(guess.getAllegiance())));
+        matches.add(new AttributeComp("Age", guess.age, this.age == guess.getAge()));
+        matches.add(new AttributeComp("Height", guess.height, this.height == guess.getHeight()));
         return matches;
     }
 }

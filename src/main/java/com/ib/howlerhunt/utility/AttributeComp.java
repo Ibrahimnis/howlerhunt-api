@@ -1,4 +1,4 @@
-package com.ib.howlerhunt.untility;
+package com.ib.howlerhunt.utility;
 
 public class AttributeComp {
 
